@@ -45,3 +45,18 @@ if __name__ == "__main__":
     df_tms['State'] = [i['admin1'] for i in data]
     df_tms['District'] = [i['admin2'] for i in data]
 
+
+	
+from geopy.geocoders import Nominatim
+geolocator = Nominatim(user_agent="geoapiExercises")
+locator = Nominatim(user_agent="myGeocoder", timeout=10)
+rgeocode = RateLimiter(locator.reverse, min_delay_seconds=0.01)
+from geopy.extra.rate_limiter import RateLimiter
+import tqdm
+from tqdm._tqdm_notebook import tqdm_notebook
+from tqdm import tqdm
+tqdm.pandas()
+
+df_tms['geom'] = df_tms['Latitude'].map(str) + ',' + df_tms['Longitude'].map(str) 
+df_tms["address"] = df_tms["geom"].progress_apply(rgeocode)
+df_tms['address'] = df_tms['address'].astype('str')
