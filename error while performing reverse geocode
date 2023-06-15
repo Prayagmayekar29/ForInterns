@@ -1,0 +1,14 @@
+Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Requirement already satisfied: geopy in /usr/local/lib/python3.10/dist-packages (2.3.0)
+Requirement already satisfied: geographiclib<3,>=1.52 in /usr/local/lib/python3.10/dist-packages (from geopy) (2.0)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-10-8f2974a8a32f> in <cell line: 8>()
+      6   return location.raw['address']
+      7 
+----> 8 geolocator = geopy.Nominatim(user_agent="http")
+      9 df1['locations'] = df1.apply(get_zipcode, axis=1, geolocator=geolocator, lat_field='LATITUDE', lon_field='LONGITUDE')
+     10 df1['locations']
+
+NameError: name 'geopy' is not defined
+
