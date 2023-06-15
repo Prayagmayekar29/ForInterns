@@ -1,0 +1,28 @@
+https://docs.google.com/spreadsheets/d/1B82K9Rejzuzntkfgl7Lf555zJ4eo13vmpwA4jsHfmbw/edit?usp=sharing
+i have changed the row and column name to latitude and longitude still showing the name error as
+
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)
+   3801             try:
+-> 3802                 return self._engine.get_loc(casted_key)
+   3803             except KeyError as err:
+
+10 frames
+pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.PyObjectHashTable.get_item()
+
+pandas/_libs/hashtable_class_helper.pxi in pandas._libs.hashtable.PyObjectHashTable.get_item()
+
+KeyError: 'latitude'
+
+The above exception was the direct cause of the following exception:
+
+KeyError                                  Traceback (most recent call last)
+/usr/local/lib/python3.10/dist-packages/pandas/core/indexes/base.py in get_loc(self, key, method, tolerance)
+   3802                 return self._engine.get_loc(casted_key)
+   3803             except KeyError as err:
+-> 3804                 raise KeyError(key) from err
+   3805             except TypeError:
+   3806                 # If we have a listlike key, _check_indexing_error will raise
+
+KeyError: 'latitude
